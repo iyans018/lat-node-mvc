@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %> 
+<body>
+    <%- include('../partials/navbar.ejs') %> 
+    <div class="container">
+        <h2><%= title %></h2>
+        <div class="card">
+            <h3><%= blogs.title %></h3>
+            <div class="card-row">
+                <small><b><i>By: <%= blogs.author %></i></b></small>
+                <small><b><%= blogs.createdAt.toLocaleDateString() %></b></small>
+            </div>
+            <p><%= blogs.body %> </p>
+        </div>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/script.ejs') %>
+</body>
+</html>

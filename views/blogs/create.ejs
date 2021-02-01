@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %> 
+<body>
+    <%- include('../partials/navbar.ejs') %> 
+    <div class="container">
+        <h2><%= title %></h2>
+
+        <form action="/blog/create" method="POST">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input class="input-textfield" type="text" name="title" id="title">
+            </div>
+            <div class="form-control">
+                <label for="author">Author</label>
+                <input class="input-textfield" type="text" name="author" id="author">
+            </div>
+            <div class="form-control">
+                <label for="body">Body</label>
+                <textarea class="input-textarea" name="body" id="body" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <button class="btn-primary" type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/script.ejs') %>
+</body>
+</html>

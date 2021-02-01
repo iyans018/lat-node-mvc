@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %> 
+<body>
+    <%- include('../partials/navbar.ejs') %> 
+    <div class="container">
+        <h2><%= title %></h2>
+
+        <table>
+            <thead>
+                <tr class="table-head">
+                    <th>No</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% blogs.forEach((blog, index) => { %> 
+                    <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= blog.title %></td>
+                        <td><%= blog.author %></td>
+                        <td>
+                            <a href="/blog/update/<%= blog.id %> " class="btn-warning">Update</a>
+                            <a href="/blog/delete/<%= blog.id %> " class="btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                <% }) %> 
+            </tbody>
+        </table>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/script.ejs') %>
+</body>
+</html>
